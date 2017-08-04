@@ -22,7 +22,6 @@
 		02E3DE0F1F337D0E0099E4F8 /* ProtobufDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3DDF91F337D0E0099E4F8 /* ProtobufDataParser.swift */; };
 		02E3DE101F337D0E0099E4F8 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3DDFA1F337D0E0099E4F8 /* Request.swift */; };
 		02E3DE111F337D0E0099E4F8 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3DDFB1F337D0E0099E4F8 /* RequestError.swift */; };
-		02E3DE121F337D0E0099E4F8 /* RequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3DDFC1F337D0E0099E4F8 /* RequestSerializer.swift */; };
 		02E3DE131F337D0E0099E4F8 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3DDFD1F337D0E0099E4F8 /* ResponseError.swift */; };
 		02E3DE141F337D0E0099E4F8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3DDFE1F337D0E0099E4F8 /* Session.swift */; };
 		02E3DE151F337D0E0099E4F8 /* SessionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3DDFF1F337D0E0099E4F8 /* SessionClient.swift */; };
@@ -33,6 +32,7 @@
 		02E3DE351F3380A80099E4F8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E3DE2C1F3380870099E4F8 /* Result.framework */; };
 		02E3DE3D1F3383940099E4F8 /* URLEncodedSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3DE3C1F3383940099E4F8 /* URLEncodedSerialization.swift */; };
 		02E3DE3F1F33857C0099E4F8 /* ErrorHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3DE3E1F33857C0099E4F8 /* ErrorHandleable.swift */; };
+		02E3DE4B1F34D0350099E4F8 /* RequestSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E3DE4A1F34D0350099E4F8 /* RequestSerializable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +104,6 @@
 		02E3DDF91F337D0E0099E4F8 /* ProtobufDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtobufDataParser.swift; sourceTree = "<group>"; };
 		02E3DDFA1F337D0E0099E4F8 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		02E3DDFB1F337D0E0099E4F8 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
-		02E3DDFC1F337D0E0099E4F8 /* RequestSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSerializer.swift; sourceTree = "<group>"; };
 		02E3DDFD1F337D0E0099E4F8 /* ResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		02E3DDFE1F337D0E0099E4F8 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		02E3DDFF1F337D0E0099E4F8 /* SessionClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionClient.swift; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		02E3DE1D1F3380860099E4F8 /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
 		02E3DE3C1F3383940099E4F8 /* URLEncodedSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedSerialization.swift; sourceTree = "<group>"; };
 		02E3DE3E1F33857C0099E4F8 /* ErrorHandleable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandleable.swift; sourceTree = "<group>"; };
+		02E3DE4A1F34D0350099E4F8 /* RequestSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSerializable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +214,7 @@
 		02E3DE381F33827C0099E4F8 /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
-				02E3DDFC1F337D0E0099E4F8 /* RequestSerializer.swift */,
+				02E3DE4A1F34D0350099E4F8 /* RequestSerializable.swift */,
 				02E3DE3C1F3383940099E4F8 /* URLEncodedSerialization.swift */,
 			);
 			name = Serialization;
@@ -399,10 +399,10 @@
 				02E3DE171F337D0E0099E4F8 /* StringDataParser.swift in Sources */,
 				02E3DE151F337D0E0099E4F8 /* SessionClient.swift in Sources */,
 				02E3DE061F337D0E0099E4F8 /* DataParser.swift in Sources */,
-				02E3DE121F337D0E0099E4F8 /* RequestSerializer.swift in Sources */,
 				02E3DE0C1F337D0E0099E4F8 /* JSONDataParser.swift in Sources */,
 				02E3DE141F337D0E0099E4F8 /* Session.swift in Sources */,
 				02E3DE0A1F337D0E0099E4F8 /* HTTPMethod.swift in Sources */,
+				02E3DE4B1F34D0350099E4F8 /* RequestSerializable.swift in Sources */,
 				02E3DE071F337D0E0099E4F8 /* Decodable.swift in Sources */,
 				02E3DE041F337D0E0099E4F8 /* BodyParameters.swift in Sources */,
 				02E3DE091F337D0E0099E4F8 /* FormURLEncodedDataParser.swift in Sources */,

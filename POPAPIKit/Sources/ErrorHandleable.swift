@@ -23,11 +23,11 @@ public protocol ErrorHandleable {
 }
 
 public extension ErrorHandleable {
-    public func intercept(urlRequest: URLRequest) throws -> URLRequest {
+    func intercept(urlRequest: URLRequest) throws -> URLRequest {
         return urlRequest
     }
     
-    public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+    func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         guard 200..<300 ~= urlResponse.statusCode else {
             throw ResponseError.unacceptableStatusCode(urlResponse.statusCode)
         }

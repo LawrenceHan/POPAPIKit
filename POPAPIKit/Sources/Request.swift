@@ -15,7 +15,7 @@ import Result
 /// - `var baseURL: URL`
 /// - `var method: HTTPMethod`
 /// - `var path: String`
-public protocol Request: RequestSerializer, ErrorHandleable {
+public protocol Request: RequestSerializable, ErrorHandleable {
     /// The response type associated with the request type.
     associatedtype Response: Decodable
     

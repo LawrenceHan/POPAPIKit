@@ -8,12 +8,14 @@
 
 import Foundation
 
-public protocol RequestSerializer {}
-
-public extension RequestSerializer where Self: POPAPIKit.Request {
+public protocol RequestSerializable {
     /// Builds `URLRequest` from `POPAPIKit.Request`.
     /// - Throws: `RequestError`, `Error`
-    public func buildURLRequest() throws -> URLRequest {
+    func buildURLRequest() throws -> URLRequest
+}
+
+public extension RequestSerializable where Self: POPAPIKit.Request {
+    func buildURLRequest() throws -> URLRequest {
         let url = path.isEmpty ? baseURL : baseURL.appendingPathComponent(path)
         guard var components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             throw RequestError.invalidBaseURL(baseURL)
