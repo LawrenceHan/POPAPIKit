@@ -87,7 +87,7 @@ final class GitHubAPI {
         }
         
         var path: String {
-            return "/rate_limit"
+            return "/rate_limitt"
         }
         
         // MARK: - First Level
@@ -156,7 +156,7 @@ final class GitHubAPI {
         }
         
         var path: String {
-            return "/search/repositories"
+            return "/search/repositoriess"
         }
         
         var parameters: Any? {

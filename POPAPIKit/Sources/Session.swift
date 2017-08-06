@@ -54,7 +54,9 @@ open class Session {
             urlRequest = try request.buildURLRequest()
         } catch {
             callbackQueue.execute {
-                handler(.failure(.requestError(error)))
+                let e = SessionTaskError.requestError(error)
+                request.handle(error: e)
+                handler(.failure(e))
             }
             return nil
         }
@@ -76,6 +78,11 @@ open class Session {
             }
             
             callbackQueue.execute {
+                switch result {
+                case .failure(let e):
+                    request.handle(error: e)
+                default: break
+                }
                 handler(result)
             }
         }
