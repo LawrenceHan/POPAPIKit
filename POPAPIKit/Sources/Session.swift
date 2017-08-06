@@ -17,12 +17,12 @@ open class Session {
     public let client: SessionClient
     
     /// The default callback queue for `send(_:handler:)`.
-    public let callbackQueue: DispatchQueue
+    public let callbackQueue: CallbackQueue
     
     /// Returns `Session` instance that is initialized with `client`.
     /// - parameter client: The client that connects lower level backend with Session interface.
     /// - parameter callbackQueue: The default callback queue for `send(_:handler:)`.
-    public init(client: SessionClient, callbackQueue: DispatchQueue = DispatchQueue.main) {
+    public init(client: SessionClient, callbackQueue: CallbackQueue = .main) {
         self.client = client
         self.callbackQueue = callbackQueue
     }
@@ -46,14 +46,14 @@ open class Session {
     /// - parameter handler: The closure that receives result of the request.
     /// - returns: The new session task.
     @discardableResult
-    open func send<Request: POPAPIKit.Request>(_ request: Request, callbackQueue: DispatchQueue? = nil, handler: @escaping (Result<Request.Response, SessionTaskError>) -> Void = { _ in }) -> SessionTask? {
+    open func send<Request: POPAPIKit.Request>(_ request: Request, callbackQueue: CallbackQueue? = nil, handler: @escaping (Result<Request.Response, SessionTaskError>) -> Void = { _ in }) -> SessionTask? {
         let callbackQueue = callbackQueue ?? self.callbackQueue
         
         let urlRequest: URLRequest
         do {
             urlRequest = try request.buildURLRequest()
         } catch {
-            callbackQueue.async {
+            callbackQueue.execute {
                 handler(.failure(.requestError(error)))
             }
             return nil
@@ -75,7 +75,7 @@ open class Session {
                 result = .failure(.responseError(ResponseError.nonHTTPURLResponse(urlResponse)))
             }
             
-            callbackQueue.async {
+            callbackQueue.execute {
                 handler(result)
             }
         }
