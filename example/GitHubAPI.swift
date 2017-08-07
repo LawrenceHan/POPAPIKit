@@ -156,7 +156,7 @@ final class GitHubAPI {
         }
         
         var path: String {
-            return "/search/repositoriess"
+            return "/search/repositories"
         }
         
         var parameters: Any? {
