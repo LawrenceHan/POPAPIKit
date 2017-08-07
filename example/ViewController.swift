@@ -17,7 +17,7 @@
 import UIKit
 import POPAPIKit
 
-// MARK: - 第三级别
+// MARK: - First Level
 extension RequestSerializable where Self: POPAPIKit.Request {
     func buildURLRequest() throws -> URLRequest {
         print("Extension: \(#function)")
@@ -71,7 +71,7 @@ extension Interceptable {
     }
 }
 
-public extension ErrorHandleable {
+extension ErrorHandleable {
     func handle(error: SessionTaskError) {
         print("Extension: \(#function)")
     }
@@ -82,6 +82,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let rateLimitRequest = GitHubAPI.GetRateLimitRequest()
+        print(rateLimitRequest.curl)
         APIKit.send(rateLimitRequest) { result in
             switch result {
             case .success(let rateLimit):
@@ -104,6 +105,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
-
-
