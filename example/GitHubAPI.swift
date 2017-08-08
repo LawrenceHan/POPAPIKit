@@ -87,10 +87,10 @@ final class GitHubAPI {
         }
         
         var path: String {
-            return "/rate_limitt"
+            return "/rate_limit"
         }
         
-        // MARK: - First Level
+        // MARK: - Third Level
         func buildURLRequest() throws -> URLRequest {
             print("Final-Protocol: \(#function)")
             let url = path.isEmpty ? baseURL : baseURL.appendingPathComponent(path)
@@ -156,7 +156,7 @@ final class GitHubAPI {
         }
         
         var path: String {
-            return "/search/repositoriess"
+            return "/search/repositories"
         }
         
         var parameters: Any? {
