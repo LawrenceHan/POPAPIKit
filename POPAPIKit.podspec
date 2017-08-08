@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "POPAPIKit"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "A Protocol Oriented Networking Kit"
   s.description  = <<-DESC
   POPAPIKit is a pure Swift implemented and protocol oriented networking kit. POPAPIKit is highly inspired by [APIKit](https://github.com/ishkawa/APIKit)
