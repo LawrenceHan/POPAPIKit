@@ -27,7 +27,6 @@
 // THE SOFTWARE.
 
 import Foundation
-import Result
 
 /// `Request` protocol represents a request for Web API.
 /// Following 5 items must be implemented.
