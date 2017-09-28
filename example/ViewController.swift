@@ -82,7 +82,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let rateLimitRequest = GitHubAPI.GetRateLimitRequest()
-        print(rateLimitRequest.curl)
+//        print(rateLimitRequest.curl)
         APIKit.send(rateLimitRequest) { result in
             switch result {
             case .success(let rateLimit):
@@ -94,14 +94,14 @@ class ViewController: UIViewController {
             }
         }
         
-        let searchRequest = GitHubAPI.SearchRepositoriesRequest(query: "swift")
-        APIKit.send(searchRequest) { result in
-            switch result {
-            case .success(let response):
-                print(response)
-            case .failure(let error):
-                print("error: \(error)")
-            }
-        }
+//        let searchRequest = GitHubAPI.SearchRepositoriesRequest(query: "swift")
+//        APIKit.send(searchRequest) { result in
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//            case .failure(let error):
+//                print("error: \(error)")
+//            }
+//        }
     }
 }

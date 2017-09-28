@@ -72,7 +72,7 @@ extension GitHubRequest {
     }
 }
 
-extension GitHubRequest where Response: Decodable {
+extension GitHubRequest where Response: Himotoki.Decodable {
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
         return try Response.decodeValue(object)
     }
@@ -165,7 +165,7 @@ final class GitHubAPI {
     }
 }
 
-struct RateLimit: Decodable {
+struct RateLimit: Himotoki.Decodable {
     let count: Int
     let resetDate: Date
     
@@ -182,7 +182,7 @@ struct RateLimit: Decodable {
     }
 }
 
-struct Repository: Decodable {
+struct Repository: Himotoki.Decodable {
     let id: Int64
     let name: String
     
@@ -193,7 +193,7 @@ struct Repository: Decodable {
     }
 }
 
-struct SearchResponse<Item: Decodable>: Decodable {
+struct SearchResponse<Item: Himotoki.Decodable>: Himotoki.Decodable {
     let items: [Item]
     let totalCount: Int
     
