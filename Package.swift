@@ -3,7 +3,8 @@ import PackageDescription
 let package = Package(
     name: "POPAPIKit",
     dependencies: [
-        .Package(url: "https://github.com/antitypical/Result.git", majorVersion: 3),
+		.package(url: "https://github.com/antitypical/Result.git", from: "4.0.0"),
     ],
     exclude: ["Sources/AbstractInputStream.m"]
+    swiftLanguageVersions: [4]
 )
